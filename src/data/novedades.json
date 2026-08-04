@@ -1,0 +1,20 @@
+[
+  {
+    "id": "novedad-1",
+    "titulo": "Servicio de Desagües Cloacales",
+    "fecha": "2026-07-15",
+    "resumen": "Brindamos servicios de desagües cloacales en Villa Giardino, Huerta Grande, Valle Hermoso y La Falda, asegurando un tratamiento responsable de los efluentes y un saneamiento seguro para toda la comunidad."
+  },
+  {
+    "id": "novedad-2",
+    "titulo": "Proyecto Escuela del Agua",
+    "fecha": "2026-06-20",
+    "resumen": "Iniciamos un programa educativo en escuelas de La Falda para concientizar sobre el uso responsable del agua potable."
+  },
+  {
+    "id": "novedad-3",
+    "titulo": "Obras en Villa Los Diques",
+    "fecha": "2026-05-30",
+    "resumen": "Avanzan los trabajos de conexión de nuevos nexos de agua potable en el barrio Villa Los Diques."
+  }
+]

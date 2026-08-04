@@ -1,0 +1,20 @@
+[
+  {
+    "id": "aviso-1",
+    "titulo": "Corte Programado por Mantenimiento",
+    "descripcion": "Barrio Villa Edelmira (9:00 a 13:00 hs)",
+    "estado": "en_progreso"
+  },
+  {
+    "id": "aviso-2",
+    "titulo": "Obras de Conexión en Villa Los Diques",
+    "descripcion": "Tendido de nuevos nexos de agua potable en el barrio",
+    "estado": "programado"
+  },
+  {
+    "id": "aviso-3",
+    "titulo": "Corte por Reparación de Cañería",
+    "descripcion": "Zona centro, calle 25 de Mayo (resuelto el 01/08)",
+    "estado": "resuelto"
+  }
+]
