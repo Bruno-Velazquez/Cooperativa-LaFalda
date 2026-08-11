@@ -18,7 +18,28 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
       "WebSearch",
       "Bash(curl -s -o /dev/null -w \"root:%{http_code}\\\\n\" http://localhost:5173/)",
-      "Bash(curl -s -o /dev/null -w \"app:%{http_code}\\\\n\" http://localhost:5173/src/App.jsx)"
+      "Bash(curl -s -o /dev/null -w \"app:%{http_code}\\\\n\" http://localhost:5173/src/App.jsx)",
+      "Bash(npx vite *)",
+      "Bash(command -v chromium-cli)",
+      "Bash(npx --yes playwright --version)",
+      "Bash(node -e ' *)",
+      "Bash(mkdir -p /c/Users/Bruno/AppData/Local/Temp/claude/c--Users-Bruno-OneDrive-Escritorio-Cooperativa-LaFalda/cf36af1a-747d-47f4-a03d-acdde3c03a1a/scratchpad/pw)",
+      "Read(//c/Users/Bruno/AppData/Local/Temp/claude/c--Users-Bruno-OneDrive-Escritorio-Cooperativa-LaFalda/cf36af1a-747d-47f4-a03d-acdde3c03a1a/scratchpad/**)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Read(//c/Users/Bruno/AppData/Local/Temp/claude/c--Users-Bruno-OneDrive-Escritorio-Cooperativa-LaFalda/cf36af1a-747d-47f4-a03d-acdde3c03a1a/scratchpad/pw/**)",
+      "Bash(npx playwright *)",
+      "Bash(node verify.js)",
+      "Bash(lsof -ti:5173 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(timeout 20 bash -c 'until curl -sf http://localhost:5173 >/dev/null; do sleep 1; done')",
+      "Bash(timeout 30 node verify-close.js)",
+      "Bash(timeout 30 node verify-mobile.js)",
+      "Bash(node -e \"console.log\\(require.resolve\\('sharp'\\)\\)\")",
+      "Bash(python3 -c \"import PIL; print\\(PIL.__version__\\)\")",
+      "Bash(where magick *)",
+      "Bash(npm uninstall *)",
+      "Bash(rm -f \"assets/favicon-blue.png\")"
     ]
   }
 }

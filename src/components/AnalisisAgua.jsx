@@ -1,10 +1,12 @@
+import bgAgua from '../../assets/ACCIONAR-AGUA-POTABLE.jpeg';
+
 export default function AnalisisAgua() {
   return (
     <section
-      className="rounded-2xl overflow-hidden relative min-h-[300px] flex items-center bg-cover bg-center"
+      className="rounded-2xl overflow-hidden relative min-h-[300px] flex items-center bg-cover"
       style={{
-        backgroundImage:
-          "url('https://commons.wikimedia.org/wiki/Special:FilePath/Water_in_a_beaker.JPG')",
+        backgroundImage: `url('${bgAgua}')`,
+        backgroundPosition: '70% center',
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />

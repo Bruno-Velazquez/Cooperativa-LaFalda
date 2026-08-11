@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AccionarPopup from './components/AccionarPopup.jsx';
 import AnalisisAgua from './components/AnalisisAgua.jsx';
 import BancoSangreModal from './components/BancoSangreModal.jsx';
 import CostosServicios from './components/CostosServicios.jsx';
@@ -24,10 +25,10 @@ export default function App() {
 
       <main className="max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop pt-stack-lg pb-stack-lg flex flex-col gap-stack-lg">
         <HeroCarousel />
-        <HeroBento onOpenBancoSangre={() => setModalOpen(true)} />
         <QuickAccessItems />
         <ServiciosGrid />
         <AnalisisAgua />
+        <HeroBento onOpenBancoSangre={() => setModalOpen(true)} />
         <MediosDePago />
         <CostosServicios />
         <Novedades />
@@ -43,6 +44,7 @@ export default function App() {
 
       <Toast toast={toast} onClose={hideToast} />
       <WhatsAppButton />
+      <AccionarPopup onOpenBancoSangre={() => setModalOpen(true)} />
     </div>
   );
 }

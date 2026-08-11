@@ -2,6 +2,8 @@ import { Droplet, ExternalLink, Newspaper } from 'lucide-react';
 import { useMemo } from 'react';
 import Carousel, { CAROUSEL_SLIDE_PADDING } from './Carousel.jsx';
 import novedades from '../data/novedades.json';
+import bannerBancoSangre from '../../assets/BANNER-ACCIONAR-BANCO-SANGRE.jpeg';
+import bannerCloacas from '../../assets/BANNER-ACCIONAR-CLOCAS.png';
 
 const OFICINA_VIRTUAL_URL = 'https://www.cooponlineweb.com.ar/LAFALDA/Login';
 
@@ -23,11 +25,11 @@ function buildSlides() {
       id: 'banco-sangre',
       icon: Droplet,
       eyebrow: 'Banco de Sangre',
-      title: 'Sumate como adherente de forma gratuita',
-      description: 'Inscribite o sumá a tu grupo familiar para garantizar cobertura inmediata.',
-      cta: { label: 'Solicitar Adhesión', href: '#banco-sangre' },
+      title: 'Ahora recibir sangre es más fácil. Un nuevo servicio gratuito pensado para todos nuestros socios.',
+      description: 'Llegamos a sanatorios de todo Córdoba.',
+      cta: { label: 'Inscribite hoy', href: '#banco-sangre' },
       overlay: 'rgba(186,26,26,0.88), rgba(186,26,26,0.5)',
-      image: 'https://images.pexels.com/photos/12193090/pexels-photo-12193090.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      image: bannerBancoSangre,
     },
   ];
 
@@ -41,7 +43,7 @@ function buildSlides() {
       descriptionMobile: 'Brindamos servicios de desagües cloacales en Villa Giardino, Huerta Grande, Valle Hermoso y La Falda.',
       cta: { label: 'Ver novedades', href: '#novedades' },
       overlay: 'rgba(0,101,141,0.88), rgba(0,101,141,0.5)',
-      image: 'https://images.pexels.com/photos/3964564/pexels-photo-3964564.jpeg?auto=compress&cs=tinysrgb&w=1600',
+      image: bannerCloacas,
     });
   }
 

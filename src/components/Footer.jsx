@@ -1,4 +1,5 @@
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import logo from '../../assets/logo-accion-ar.png';
 
 function scrollToTop(e) {
   e.preventDefault();
@@ -12,11 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
         <div className="flex flex-col items-start gap-4">
           <a href="/" onClick={scrollToTop} aria-label="Ir al inicio" className="self-start pb-2">
-            <img
-              alt="Logo Cooperativa La Falda"
-              className="h-10 object-contain"
-              src="https://lh3.googleusercontent.com/aida/AP1WRLtEZSx7EjMzMkpCMdaT6wXWJzFE-1c89DNL825ThQhhpBDDS_-k-cxpIA-4gjqis6gktOolKd1H3lEH15F07VTExhzmB-r-7ZRDCdYKcyLgZjTngeN3uSnULZ_5CD1zvIN5BoiUXxKYXvBn6D79KQ06h-JWO82XQUf13YjX8GFpB36j6sdytdoscTWNMzM1LBPqjEM01iS1Ecuqbkord0en98qpciMj8R_xNchShaoB0TDgxhNtn2UZcwJ3"
-            />
+            <img src={logo} alt="Accion-ar Cooperativa de Servicios Públicos" className="h-12 object-contain" />
           </a>
           <p className="text-body-md text-on-surface-variant flex items-start gap-2">
             <MapPin size={20} className="shrink-0 mt-0.5" />

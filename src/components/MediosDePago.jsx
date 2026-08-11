@@ -5,8 +5,8 @@ const MEDIOS = [
   { icon: Store, label: 'RapiPago', description: 'Aboná en cualquier sucursal adherida.' },
   { icon: Landmark, label: 'Homebanking y cajeros', description: 'Disponible en bancos adheridos.' },
   { icon: Repeat, label: 'Débito automático', description: 'Adherite y no te olvides más de pagar.' },
-  { icon: Banknote, label: 'Efectivo en oficinas', description: 'Av. Edén 123, La Falda.' },
-  { icon: Building2, label: 'Anticipo por cuenta corriente', description: 'Consultá condiciones en mesa de entradas.' },
+  { icon: Banknote, label: 'Efectivo en oficinas', description: '25 de Mayo 298, La Falda.' },
+  { icon: Building2, label: 'Anticipo por cuenta corriente', description: 'Acercate a la Cooperativa.' },
 ];
 
 export default function MediosDePago() {
