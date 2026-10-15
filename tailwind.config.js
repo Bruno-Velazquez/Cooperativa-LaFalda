@@ -87,6 +87,15 @@ export default {
         'body-md': ['16px', { lineHeight: '24px', fontWeight: '400' }],
         'label-md': ['14px', { lineHeight: '20px', letterSpacing: '0.05em', fontWeight: '600' }],
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.7s ease-out',
+      },
     },
   },
   plugins: [],

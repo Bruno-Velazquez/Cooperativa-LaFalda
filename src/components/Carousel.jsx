@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 4000;
 
 // Shared horizontal padding for every slide's content so text never sits under the arrows.
 // Vertical padding is set per-carousel (see HeroCarousel/CostosServicios) since content height differs.
@@ -9,17 +9,23 @@ export const CAROUSEL_SLIDE_PADDING = 'px-14 md:px-20';
 // Default fixed height, used unless a carousel instance needs a different one (see `heightClassName`).
 export const CAROUSEL_MIN_HEIGHT = 'h-[520px]';
 
-export default function Carousel({ slides, renderSlide, ariaLabel, heightClassName = CAROUSEL_MIN_HEIGHT }) {
+export default function Carousel({
+  slides,
+  renderSlide,
+  ariaLabel,
+  heightClassName = CAROUSEL_MIN_HEIGHT,
+  bleed = false,
+  autoplay = true,
+}) {
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused || slides.length <= 1) return undefined;
+    if (!autoplay || slides.length <= 1) return undefined;
     const timer = setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
     }, AUTOPLAY_MS);
     return () => clearInterval(timer);
-  }, [paused, slides.length]);
+  }, [autoplay, slides.length]);
 
   if (slides.length === 0) return null;
 
@@ -28,11 +34,13 @@ export default function Carousel({ slides, renderSlide, ariaLabel, heightClassNa
   return (
     <section
       aria-label={ariaLabel}
-      className={`relative rounded-2xl overflow-hidden border border-outline-variant ${heightClassName} flex flex-col`}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      className={`relative overflow-hidden ${
+        bleed ? '' : 'rounded-2xl border border-outline-variant'
+      } ${heightClassName} flex flex-col`}
     >
-      <div className="flex-1 overflow-y-auto">{renderSlide(slides[index], index)}</div>
+      <div key={slides[index].id} className="flex-1 overflow-y-auto animate-fade-in">
+        {renderSlide(slides[index], index)}
+      </div>
 
       {slides.length > 1 && (
         <>

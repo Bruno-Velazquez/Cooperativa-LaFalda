@@ -12,6 +12,7 @@ export default function CostosServicios() {
       <Carousel
         slides={tarifas}
         ariaLabel="Tarifas de servicios"
+        autoplay={false}
         renderSlide={(tarifa) => (
           <div
             className={`${CAROUSEL_SLIDE_PADDING} pt-6 pb-8 md:pt-8 md:pb-10 h-full flex flex-col gap-stack-sm bg-surface-container-lowest`}

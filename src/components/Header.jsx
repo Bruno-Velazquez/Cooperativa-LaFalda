@@ -1,11 +1,12 @@
 import { ExternalLink, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import logo from '../../assets/logo-accion-ar.png';
+import useHashRoute, { navigateHome } from '../hooks/useHashRoute.js';
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Banco de Sangre', href: '#banco-sangre' },
+  { label: 'Banco de Sangre', href: '#/banco-sangre' },
   { label: 'Novedades', href: '#novedades' },
   { label: 'Contacto', href: '#contacto' },
 ];
@@ -28,11 +29,15 @@ function OficinaVirtualButton({ className = '' }) {
 
 function scrollToTop(e) {
   e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  navigateHome();
 }
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const route = useHashRoute();
+
+  const esActivo = (href) =>
+    href === '#/banco-sangre' ? route === '/banco-sangre' : href === '#inicio' && route === '/';
 
   return (
     <header className="bg-surface sticky top-0 w-full z-50 border-b border-outline-variant">
@@ -46,8 +51,9 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
+              onClick={i === 0 ? scrollToTop : undefined}
               className={
-                i === 0
+                esActivo(link.href)
                   ? 'text-primary border-b-2 border-primary pb-1 text-[16px] font-semibold'
                   : 'text-on-surface-variant hover:text-primary-container transition-colors text-[16px] font-semibold'
               }
@@ -78,11 +84,14 @@ export default function Header() {
       >
         <div className="px-margin-mobile py-stack-md flex flex-col gap-stack-md">
           <nav className="flex flex-col gap-4">
-            {NAV_LINKS.map((link) => (
+            {NAV_LINKS.map((link, i) => (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => {
+                  setMenuOpen(false);
+                  if (i === 0) scrollToTop(e);
+                }}
                 className="text-on-surface text-body-lg font-semibold"
               >
                 {link.label}

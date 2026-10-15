@@ -1,14 +1,15 @@
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from 'lucide-react';
 import logo from '../../assets/logo-accion-ar.png';
+import { navigateHome } from '../hooks/useHashRoute.js';
 
 function scrollToTop(e) {
   e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  navigateHome();
 }
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-surface-container-highest mt-auto">
+    <footer id="contacto" className="bg-surface-container-highest mt-auto scroll-mt-24">
       <div className="px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
         <div className="flex flex-col items-start gap-4">
@@ -65,7 +66,7 @@ export default function Footer() {
             Novedades
           </a>
           <a
-            href="#banco-sangre"
+            href="#/banco-sangre"
             className="text-body-md text-on-surface-variant hover:underline decoration-secondary decoration-2"
           >
             Banco de Sangre

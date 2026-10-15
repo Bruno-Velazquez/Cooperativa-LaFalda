@@ -16,7 +16,7 @@ function formatFecha(iso) {
 
 export default function Novedades() {
   return (
-    <section id="novedades" className="py-stack-lg">
+    <section id="novedades" className="py-stack-lg scroll-mt-24">
       <h2 className="text-headline-md text-on-surface mb-stack-md">Novedades</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
         {novedades.map((novedad) => (

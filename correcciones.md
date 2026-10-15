@@ -107,6 +107,11 @@ Sumate como adherente de forma gratuita Inscribite o sumá a tu grupo familiar p
 
 (corregido)37- en la foto de "analisis de agua" movela un poco hacia la derecha
 
+(corregido)38-Quiero que los tres banner se vean en tamaño de pantalla completo y los textos esten a las derechay sea vean bien. 
+
+(corregido)39- Quiero que cada boton del header te redireccione aca area bien situada.
+
+(corregido)40- Sacá la caja y quiero que ocupes todo el ancho de la pantalla en los 3 banners, pone los textos en el lado izquierdo.
 
 
 

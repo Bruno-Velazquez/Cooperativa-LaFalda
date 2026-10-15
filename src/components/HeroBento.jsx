@@ -4,7 +4,7 @@ const OFICINA_VIRTUAL_URL = 'https://www.cooponlineweb.com.ar/LAFALDA/Login';
 
 export default function HeroBento({ onOpenBancoSangre }) {
   return (
-    <section id="inicio" className="flex flex-col gap-stack-md py-4">
+    <section className="flex flex-col gap-stack-md py-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
         <div className="glass-card rounded-xl p-stack-md flex flex-col justify-between h-full hover:shadow-lg transition-shadow border-l-4 border-l-cta">
           <div>
@@ -31,7 +31,7 @@ export default function HeroBento({ onOpenBancoSangre }) {
 
         <div
           id="banco-sangre"
-          className="glass-card rounded-xl p-stack-md flex flex-col justify-between h-full hover:shadow-lg transition-shadow border-l-4 border-l-error"
+          className="glass-card rounded-xl p-stack-md flex flex-col justify-between h-full hover:shadow-lg transition-shadow border-l-4 border-l-error scroll-mt-24"
         >
           <div>
             <div className="w-12 h-12 bg-error-container rounded-full flex items-center justify-center mb-4 text-error">

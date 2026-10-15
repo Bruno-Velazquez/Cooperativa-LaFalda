@@ -27,7 +27,7 @@ function buildSlides() {
       eyebrow: 'Banco de Sangre',
       title: 'Ahora recibir sangre es más fácil. Un nuevo servicio gratuito pensado para todos nuestros socios.',
       description: 'Llegamos a sanatorios de todo Córdoba.',
-      cta: { label: 'Inscribite hoy', href: '#banco-sangre' },
+      cta: { label: 'Inscribite hoy', href: '#/banco-sangre' },
       overlay: 'rgba(186,26,26,0.88), rgba(186,26,26,0.5)',
       image: bannerBancoSangre,
     },
@@ -57,20 +57,21 @@ export default function HeroCarousel() {
     <Carousel
       slides={slides}
       ariaLabel="Información destacada"
-      heightClassName="h-[360px] md:h-[400px]"
+      heightClassName="h-[calc(100vh-5rem)] min-h-[480px]"
+      bleed
       renderSlide={(slide) => {
         const Icon = slide.icon;
         return (
           <div
-            className={`text-white ${CAROUSEL_SLIDE_PADDING} pt-8 pb-8 md:pt-10 md:pb-10 h-full flex flex-col justify-center gap-stack-sm bg-cover bg-center`}
+            className={`text-white ${CAROUSEL_SLIDE_PADDING} pt-8 pb-8 md:pt-10 md:pb-10 h-full flex flex-col items-start text-left justify-center gap-stack-sm bg-cover bg-center`}
             style={{ backgroundImage: `linear-gradient(to right, ${slide.overlay}), url('${slide.image}')` }}
           >
             <div className="flex items-center gap-2">
-              <Icon size={22} />
-              <span className="text-label-md uppercase tracking-wide">{slide.eyebrow}</span>
+              <Icon size={26} />
+              <span className="text-body-md md:text-body-lg uppercase tracking-wide font-semibold">{slide.eyebrow}</span>
             </div>
-            <h2 className="text-headline-sm md:text-headline-md font-bold max-w-2xl">{slide.title}</h2>
-            <p className="text-body-md max-w-2xl opacity-90">
+            <h2 className="text-headline-md md:text-display-lg-mobile font-bold max-w-2xl">{slide.title}</h2>
+            <p className="text-body-lg max-w-2xl opacity-90">
               <span className="md:hidden">{slide.descriptionMobile ?? slide.description}</span>
               <span className="hidden md:inline">{slide.description}</span>
             </p>
@@ -78,7 +79,7 @@ export default function HeroCarousel() {
               href={slide.cta.href}
               target={slide.cta.external ? '_blank' : undefined}
               rel={slide.cta.external ? 'noopener noreferrer' : undefined}
-              className="mt-2 w-fit bg-surface-container-lowest text-primary hover:bg-primary-fixed text-label-md px-5 py-3 rounded-lg flex items-center gap-2 transition-colors min-h-[48px]"
+              className="mt-2 w-fit bg-surface-container-lowest text-primary hover:bg-primary-fixed text-body-md font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors min-h-[48px]"
             >
               {slide.cta.label}
             </a>
