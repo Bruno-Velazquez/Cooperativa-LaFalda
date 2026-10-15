@@ -139,7 +139,7 @@ export default function BancoSangrePage({ onOpenBancoSangre }) {
               className="bg-error hover:bg-on-error-container text-on-error text-body-md font-semibold px-6 py-3.5 rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[48px] w-fit"
             >
               <Droplet size={18} />
-              Completar pre-inscripción
+              Completar inscripción
             </button>
             {PLANILLA_INSCRIPCION_URL && (
               <a
