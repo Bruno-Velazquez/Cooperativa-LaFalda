@@ -7,6 +7,12 @@ import bannerCloacas from '../../assets/BANNER-ACCIONAR-CLOCAS.png';
 
 const OFICINA_VIRTUAL_URL = 'https://www.cooponlineweb.com.ar/LAFALDA/Login';
 
+// Difuminado horizontal sobre la foto: arranca en el color del banner (izquierda,
+// donde van los textos) y termina transparente (derecha), dejando ver la imagen.
+function degradeHorizontal(rgb) {
+  return `linear-gradient(to right, rgba(${rgb},0.95) 0%, rgba(${rgb},0.75) 30%, rgba(${rgb},0.35) 60%, rgba(${rgb},0) 85%)`;
+}
+
 function buildSlides() {
   const novedadDestacada = novedades[0];
 
@@ -18,7 +24,7 @@ function buildSlides() {
       title: 'Pagá tu factura online',
       description: 'Ingresá a CoopOnline para ver tu saldo y abonar el servicio de forma rápida y segura.',
       cta: { label: 'Ingresar ahora', href: OFICINA_VIRTUAL_URL, external: true },
-      overlay: 'rgba(0,62,111,0.88), rgba(0,62,111,0.5)',
+      overlayRgb: '0,62,111', // primary
       image: 'https://images.pexels.com/photos/10330118/pexels-photo-10330118.jpeg?auto=compress&cs=tinysrgb&w=1600',
     },
     {
@@ -31,7 +37,7 @@ function buildSlides() {
       description:
         'Un nuevo servicio gratuito pensado para todos nuestros socios. Llegamos a sanatorios de todo Córdoba.',
       cta: { label: 'Inscribite hoy', href: '#/banco-sangre' },
-      overlay: 'rgba(186,26,26,0.88), rgba(186,26,26,0.5)',
+      overlayRgb: '186,26,26', // error / rojo del Banco de Sangre
       image: bannerBancoSangre,
     },
   ];
@@ -45,7 +51,7 @@ function buildSlides() {
       description: novedadDestacada.resumen,
       descriptionMobile: 'Brindamos servicios de desagües cloacales en Villa Giardino, Huerta Grande, Valle Hermoso y La Falda.',
       cta: { label: 'Ver novedades', href: '#novedades' },
-      overlay: 'rgba(0,101,141,0.88), rgba(0,101,141,0.5)',
+      overlayRgb: '0,101,141', // secondary
       image: bannerCloacas,
     });
   }
@@ -67,7 +73,9 @@ export default function HeroCarousel() {
         return (
           <div
             className={`text-white ${CAROUSEL_SLIDE_PADDING} pt-8 pb-8 md:pt-10 md:pb-10 h-full flex flex-col items-start text-left justify-center gap-stack-sm bg-cover bg-center`}
-            style={{ backgroundImage: `linear-gradient(to right, ${slide.overlay}), url('${slide.image}')` }}
+            style={{
+              backgroundImage: `${degradeHorizontal(slide.overlayRgb)}, url('${slide.image}')`,
+            }}
           >
             <div className="flex items-center gap-2">
               <Icon size={26} />
