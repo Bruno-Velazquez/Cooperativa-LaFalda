@@ -3,8 +3,8 @@ import tarifas from '../data/tarifas.json';
 
 export default function CostosServicios() {
   return (
-    <section aria-label="Costos de servicios" className="py-stack-lg">
-      <h2 className="text-headline-md text-on-surface mb-2">Costos de Servicios</h2>
+    <section aria-label="Cuadro tarifario" className="py-stack-lg">
+      <h2 className="text-headline-md text-on-surface mb-2">Cuadro Tarifario</h2>
       <p className="text-body-md text-on-surface-variant mb-stack-md">
         El valor final depende de la categoría de conexión. Consultá tu caso particular en mesa de entradas.
       </p>

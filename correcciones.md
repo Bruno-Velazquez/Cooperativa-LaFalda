@@ -113,9 +113,23 @@ Sumate como adherente de forma gratuita Inscribite o sumá a tu grupo familiar p
 
 (corregido)40- Sacá la caja y quiero que ocupes todo el ancho de la pantalla en los 3 banners, pone los textos en el lado izquierdo.
 
+(corregido)41- Cuando se abra la pagina quiero que se abra en el banner principal, arriba de todo como en compu y en mobile
 
+(corregido)42- Los titulos y textos en cada banner sean mas grandes
 
+(corregido)43- En "Servicios esenciales para nuestra comunidad" el titulo de este sea el tamaño como en "Medios de Pago"
 
+(corregido)44-El auto play en cada banner principal quiero que sea de 6 segundos
+
+(corregido)45- el boton de "oficina virtual" class="bg-primary-container hover:bg-primary text-on-primary text-[16px] font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[48px] " quiero que diga "paga tu factura"
+
+(corregido)46-En class="text-headline-md text-on-surface mb-2" quiero que diga "Tarifario"
+
+(corregido)47- Los titulos están bien logrados pero los subtitulos o todos los otros textos o en class="text-body-lg md:text-headline-sm uppercase tracking-wide font-semibold" están muy grandes achicalo un poco 
+
+(corregido)48- Los botones en cada banner achicalo y que quede el mismo tamaño del boton de class="bg-primary-container hover:bg-primary text-on-primary text-[16px] font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[48px] 
+
+(corregido)49- En el banner de "Banco de Sangre" pone otro titulo mas corto, no tanto texto
 
 
 

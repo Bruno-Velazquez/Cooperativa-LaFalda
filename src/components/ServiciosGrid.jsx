@@ -23,7 +23,7 @@ export default function ServiciosGrid() {
   return (
     <section id="servicios" className="py-stack-lg scroll-mt-24">
       <div className="max-w-2xl mb-stack-md">
-        <h1 className="text-display-lg-mobile md:text-display-lg text-on-background mb-4">
+        <h1 className="text-headline-md text-on-background mb-4">
           Servicios esenciales para nuestra comunidad
         </h1>
         <p className="text-body-lg text-on-surface-variant">

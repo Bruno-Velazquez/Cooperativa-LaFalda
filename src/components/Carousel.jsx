@@ -1,7 +1,7 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const AUTOPLAY_MS = 4000;
+const AUTOPLAY_MS = 6000;
 
 // Shared horizontal padding for every slide's content so text never sits under the arrows.
 // Vertical padding is set per-carousel (see HeroCarousel/CostosServicios) since content height differs.

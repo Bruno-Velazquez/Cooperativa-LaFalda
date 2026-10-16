@@ -15,7 +15,7 @@ function buildSlides() {
       id: 'oficina-virtual',
       icon: ExternalLink,
       eyebrow: 'Trámite Online',
-      title: 'Oficina Virtual - Pagá tu factura online',
+      title: 'Pagá tu factura online',
       description: 'Ingresá a CoopOnline para ver tu saldo y abonar el servicio de forma rápida y segura.',
       cta: { label: 'Ingresar ahora', href: OFICINA_VIRTUAL_URL, external: true },
       overlay: 'rgba(0,62,111,0.88), rgba(0,62,111,0.5)',
@@ -25,8 +25,11 @@ function buildSlides() {
       id: 'banco-sangre',
       icon: Droplet,
       eyebrow: 'Banco de Sangre',
-      title: 'Ahora recibir sangre es más fácil. Un nuevo servicio gratuito pensado para todos nuestros socios.',
-      description: 'Llegamos a sanatorios de todo Córdoba.',
+      title: 'Ahora recibir sangre es más fácil',
+      // Título en una sola línea de md en adelante (el tamaño baja en pantallas angostas).
+      titleOneLine: true,
+      description:
+        'Un nuevo servicio gratuito pensado para todos nuestros socios. Llegamos a sanatorios de todo Córdoba.',
       cta: { label: 'Inscribite hoy', href: '#/banco-sangre' },
       overlay: 'rgba(186,26,26,0.88), rgba(186,26,26,0.5)',
       image: bannerBancoSangre,
@@ -68,10 +71,18 @@ export default function HeroCarousel() {
           >
             <div className="flex items-center gap-2">
               <Icon size={26} />
-              <span className="text-body-md md:text-body-lg uppercase tracking-wide font-semibold">{slide.eyebrow}</span>
+              <span className="text-body-md uppercase tracking-wide font-semibold">{slide.eyebrow}</span>
             </div>
-            <h2 className="text-headline-md md:text-display-lg-mobile font-bold max-w-2xl">{slide.title}</h2>
-            <p className="text-body-lg max-w-2xl opacity-90">
+            <h2
+              className={`font-bold ${
+                slide.titleOneLine
+                  ? 'text-display-lg-mobile md:whitespace-nowrap md:max-w-none md:text-[30px] lg:text-[36px] xl:text-[48px] md:leading-[1.2]'
+                  : 'text-display-lg-mobile md:text-display-lg max-w-3xl'
+              }`}
+            >
+              {slide.title}
+            </h2>
+            <p className="text-body-md md:text-body-lg font-normal max-w-3xl opacity-90">
               <span className="md:hidden">{slide.descriptionMobile ?? slide.description}</span>
               <span className="hidden md:inline">{slide.description}</span>
             </p>
@@ -79,7 +90,7 @@ export default function HeroCarousel() {
               href={slide.cta.href}
               target={slide.cta.external ? '_blank' : undefined}
               rel={slide.cta.external ? 'noopener noreferrer' : undefined}
-              className="mt-2 w-fit bg-surface-container-lowest text-primary hover:bg-primary-fixed text-body-md font-semibold px-6 py-3.5 rounded-lg flex items-center gap-2 transition-colors min-h-[48px]"
+              className="mt-2 w-fit bg-surface-container-lowest text-primary hover:bg-primary-fixed text-[16px] font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[48px]"
             >
               {slide.cta.label}
             </a>

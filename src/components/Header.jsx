@@ -22,7 +22,7 @@ function OficinaVirtualButton({ className = '' }) {
       className={`bg-primary-container hover:bg-primary text-on-primary text-[16px] font-semibold px-6 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors min-h-[48px] ${className}`}
     >
       <ExternalLink size={18} />
-      Oficina Virtual
+      Pagá tu factura
     </a>
   );
 }
