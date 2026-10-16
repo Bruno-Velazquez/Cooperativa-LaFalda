@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import AccionarPopup from './components/AccionarPopup.jsx';
 import AnalisisAgua from './components/AnalisisAgua.jsx';
 import BancoSangreModal from './components/BancoSangreModal.jsx';
@@ -23,18 +23,37 @@ export default function App() {
   const { toast, showToast, hideToast } = useToast();
   const enBancoSangre = route === '/banco-sangre';
 
-  // Al cambiar de página: si la URL trae un ancla de la home (#servicios, #novedades…)
-  // se baja hasta esa sección una vez montada; si no, se arranca arriba de todo.
+  // Al entrar al sitio se arranca siempre arriba de todo, en el banner principal:
+  // si la URL quedó con un ancla vieja (#contacto, #novedades…) se limpia.
+  // Después, al cambiar de página, se respeta el ancla de la home si la hay.
+  const primeraCarga = useRef(true);
+
   useEffect(() => {
     const { hash } = window.location;
-    if (hash && !hash.startsWith('#/')) {
+    const esAncla = Boolean(hash) && !hash.startsWith('#/');
+
+    const irArriba = () => window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (primeraCarga.current) {
+      primeraCarga.current = false;
+      if (esAncla) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      irArriba();
+      // Segundo intento tras el primer pintado, por si el navegador recuerda la posición.
+      const frame = requestAnimationFrame(irArriba);
+      return () => cancelAnimationFrame(frame);
+    }
+
+    if (esAncla) {
       const target = document.getElementById(hash.slice(1));
       if (target) {
         target.scrollIntoView();
-        return;
+        return undefined;
       }
     }
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    irArriba();
+    return undefined;
   }, [route]);
 
   return (
